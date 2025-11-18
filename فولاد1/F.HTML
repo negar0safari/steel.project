@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>محاسبات سختی قاب ساختمان</title>
+    <link rel="stylesheet" href="F.CSS" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>محاسبات سختی قاب ساختمان</h1>
+        <p class="description">
+          نتایج محاسبات ضرایب سختی جانبی قاب برای ساختمان ۴ طبقه با ۳ دهانه
+        </p>
+      </header>
+
+      <section class="results-section">
+        <h2>نتایج کلی محاسبات</h2>
+        <table id="results-table">
+          <thead>
+            <tr>
+              <th>طبقه</th>
+              <th>Σ(Ic/Lc)</th>
+              <th>Σ(Ib/Lb)</th>
+              <th>ضریب سختی (G)</th>
+              <th>ضریب K</th>
+            </tr>
+          </thead>
+          <tbody id="results-body">
+            <!-- نتایج توسط جاوااسکریپت پر خواهد شد -->
+          </tbody>
+        </table>
+
+        <div class="summary">
+          <div class="summary-box">
+            <h3>میانگین ضریب سختی G</h3>
+            <div class="summary-value" id="avg-g">0.00</div>
+          </div>
+          <div class="summary-box">
+            <h3>میانگین ضریب K</h3>
+            <div class="summary-value" id="avg-k">0.00</div>
+          </div>
+          <div class="summary-box">
+            <h3>بیشترین ضریب سختی</h3>
+            <div class="summary-value" id="max-g">0.00</div>
+          </div>
+          <div class="summary-box">
+            <h3>کمترین ضریب سختی</h3>
+            <div class="summary-value" id="min-g">0.00</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="details-section">
+        <h2>جزئیات محاسبات گره به گره</h2>
+        <div id="details-container">
+          <!-- جزئیات توسط جاوااسکریپت پر خواهد شد -->
+        </div>
+      </section>
+
+      <section class="formula-section">
+        <h2>فرمول‌های محاسباتی</h2>
+        <div class="formula-box">
+          <h3>فرمول محاسبه ضریب K:</h3>
+          <p class="formula">
+            K = (3 × G<sub>B</sub> × G<sub>T</sub> + 1.4 × (G<sub>T</sub> +
+            G<sub>B</sub>) + 1.64) / (3 × G<sub>T</sub> × G<sub>B</sub> + 2 ×
+            (G<sub>T</sub> + G<sub>B</sub>) + 1.28)
+          </p>
+          <p class="assumption">فرض: G<sub>B</sub> = 1 (برای تمامی طبقات)</p>
+        </div>
+      </section>
+
+      <footer>
+        <p>
+          طراحی شده برای نمایش نتایج محاسبات مهندسی سازه | بر اساس جدول اشتال
+        </p>
+      </footer>
+    </div>
+
+    <script src="F.JS"></script>
+  </body>
+</html>
