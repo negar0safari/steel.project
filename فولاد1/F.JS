@@ -124,7 +124,7 @@ function calculateStiffnessFactors(floors) {
 
 // تابع نمایش نتایج در جدول
 function displayResults() {
-  const stiffnessResults = calculateStiffnessFactors(buildingFloors);
+  const stiffnessResults = calculateStiffnessFactors(buildingFloors); //محاسبات رو انجام بده و نتایج رو ذخیره کن
   const resultsBody = document.getElementById('results-body');
   const detailsContainer = document.getElementById('details-container');
 
@@ -140,7 +140,7 @@ function displayResults() {
 
   // نمایش نتایج کلی
   stiffnessResults.forEach((result) => {
-    const row = document.createElement('tr');
+    const row = document.createElement('tr'); //'tr' → مخفف Table Row (سطر جدول)
 
     row.innerHTML = `
             <td class="floor-name">${result.floor}</td>
@@ -150,7 +150,7 @@ function displayResults() {
             <td class="k-value">${result.K.toFixed(4)}</td>
         `;
 
-    resultsBody.appendChild(row);
+    resultsBody.appendChild(row); //سطر جدید رو به جدول اضافه کن
 
     // محاسبه آمار
     totalG += result.G;
@@ -162,7 +162,8 @@ function displayResults() {
   // نمایش آمار
   document.getElementById('avg-g').textContent = (
     totalG / stiffnessResults.length
-  ).toFixed(4);
+  ) //مجموع Gها تقسیم بر تعداد طبقات
+    .toFixed(4);
   document.getElementById('avg-k').textContent = (
     totalK / stiffnessResults.length
   ).toFixed(4);
@@ -174,12 +175,13 @@ function displayResults() {
     const floorDetail = document.createElement('div');
     floorDetail.className = 'floor-details';
 
-    let columnsHTML = '';
+    let columnsHTML = ''; //معنی: دو متغیر خالی برای ذخیره HTML ستون‌ها و تیرها ایجاد کن
     let beamsHTML = '';
 
     // جزئیات ستون‌ها
     floor.columns.forEach((col, colIndex) => {
-      const prop = profileProperties[col.profile];
+      const prop = profileProperties[col.profile]; //"مشخصات فنی پروفیل این ستون را از دفترچه مشخصات پیدا کن"
+
       const colStiffness = (prop.I * prop.E) / col.L;
       columnsHTML += `
                 <tr>
